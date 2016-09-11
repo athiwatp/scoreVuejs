@@ -13,9 +13,10 @@ export default {
 
 <style lang="css" scoped>
   .score {
-    border: 8px solid #333;
+    /*border: 8px solid #333;*/
     text-align: center;
     border-radius: 7px;
+    color: green;
   }
   .title {
     text-align: center;

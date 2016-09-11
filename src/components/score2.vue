@@ -1,24 +1,16 @@
 <template lang="html">
   <div class="scoreTemp">
     score! AWAY <br>
-    <div class="button"> +1 </div>
-    <div class="button"> +2 </div>
-    <div class="button"> +3 </div>
-    <div class="button"> -1 </div>
+    <div class="button yellow" @click="addScoreAway(1)"> +1 </div>
+    <div class="button green" @click="addScoreAway(2)"> +2 </div>
+    <div class="button blue" @click="addScoreAway(3)"> +3 </div>
+    <div class="button red" @click="subScoreAway(1)"> -1 </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-    }
-  },
-  computed: {},
-  ready () {},
-  attached () {},
-  methods: {},
-  components: {}
+  props: ['addScoreAway', 'subScoreAway']
 }
 </script>
 
@@ -27,10 +19,26 @@ export default {
   text-align: center;
 }
  .button {
-   border: 8px solid #333;
+   /*border: 8px solid #333;*/
    display: inline-block;
    padding-left: 2px;
    padding-right: 2px;
    text-align: center;
+   cursor: pointer;
+   border-radius: 20px;
+   font-size: 37px;
+   width: 9%;
+ }
+ .yellow {
+   background-color: yellow;
+ }
+ .green {
+   background-color: green;
+ }
+ .blue {
+   background-color: blue;
+ }
+ .red {
+   background-color: red;
  }
 </style>
