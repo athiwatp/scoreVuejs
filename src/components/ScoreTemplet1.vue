@@ -1,21 +1,13 @@
 <template lang="html">
   <div class="score">
     HOME <br>
-    <span class="title"> 0 </span>
+    <span class="title"> {{ scoreHome }} </span>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-    }
-  },
-  computed: {},
-  ready () {},
-  attached () {},
-  methods: {},
-  components: {}
+  props: ['scoreHome']
 }
 </script>
 
@@ -30,4 +22,14 @@ export default {
     font-weight: bold;
     font-size: 190px;
   }
+  .scoreTemp {
+    text-align: center;
+  }
+   .button {
+     border: 8px solid #333;
+     display: inline-block;
+     padding-left: 2px;
+     padding-right: 2px;
+     text-align: center;
+   }
 </style>
