@@ -1,6 +1,11 @@
-# paijai
+# Score
 
-> A Vue.js project
+> A Vue.js project <br>
+> concept smart components
+
+![concept](./concept.png) <br>
+![concept](./ans.jpg)
+
 
 ## Build Setup
 
