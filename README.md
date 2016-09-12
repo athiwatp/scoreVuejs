@@ -3,8 +3,9 @@
 > A Vue.js project <br>
 > concept smart components
 
-![concept](./concept.png) <br>
-![concept](./ans.jpg)
+![concept](./ans.jpg) <br>
+![concept](./concept.png)
+
 
 
 ## Build Setup
