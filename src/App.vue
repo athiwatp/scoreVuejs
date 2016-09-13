@@ -1,44 +1,56 @@
 <template lang="html">
-  Score Vuejs
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <score-templet1></score-templet1>
-      </div>
-      <div class="col-md-6">
-        <score-templet2></score-templet2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <score1></score1>
-      </div>
-      <div class="col-md-6">
-        <score2></score2>
-      </div>
-    </div>
-  </div>
+        <score-templet :show-data="data"></score-templet>
+        <score
+        :score="data"
+        :add-score-home="addScoreHome"
+        :sub-score-home="subScoreHome"
+        :add-score-away="addScoreAway"
+        :sub-score-away="subScoreAway">
+        </score>
 </template>
 
 <script>
-import ScoreTemplet1 from './components/ScoreTemplet1'
-import Score1 from './components/score1'
-import ScoreTemplet2 from './components/ScoreTemplet2'
-import Score2 from './components/score2'
+import ScoreTemplet from './components/ScoreTemplet'
+import Score from './components/score'
 export default {
   data () {
     return {
+      data: [
+        {
+          title: 'Home',
+          score: 0
+        },
+        {
+          title: 'AWAY',
+          score: 0
+        }
+      ]
     }
   },
   computed: {},
   ready () {},
   attached () {},
-  methods: {},
+  methods: {
+    addScoreHome: function (score) {
+      this.data[0].score += score
+    },
+    subScoreHome: function (score) {
+      if (this.data[0].score === 0) {
+        this.data[0].score = 0
+      } else this.data[0].score -= score
+    },
+    addScoreAway: function (score) {
+      this.data[1].score += score
+    },
+    subScoreAway: function (score) {
+      if (this.data[1].score === 0) {
+        this.data[1].score = 0
+      } else this.data[1].score -= score
+    }
+  },
   components: {
-    ScoreTemplet1: ScoreTemplet1,
-    Score1: Score1,
-    ScoreTemplet2: ScoreTemplet2,
-    Score2: Score2
+    ScoreTemplet: ScoreTemplet,
+    Score: Score
   }
 }
 </script>
